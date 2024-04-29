@@ -1,0 +1,45 @@
+.line {
+  width: 100%;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.label_container {
+  width: 475px;
+}
+
+.label_title {
+  padding: 16px 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-weight: 500;
+  font-size: 1.6rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.label_description {
+  max-height: 0;
+  overflow: hidden;
+
+  &.opened {
+    max-height: 300px;
+    transition: all 0.5s ease-out;
+  }
+}
+
+.chevron {
+  transition: all 0.1s ease;
+  &.up {
+    transform: rotate(180deg);
+    transition: all 0.1s ease;
+  }
+}
+
+.content {
+  padding: 0 0 16px;
+  font-size: 14px;
+}
