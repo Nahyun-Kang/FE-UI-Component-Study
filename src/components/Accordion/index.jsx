@@ -6,26 +6,32 @@ import styles from './Accordion.module.scss';
 import { MOCK_DATA } from './mock';
 import Chevron from '../../../public/chevron_down.svg';
 
-function Accordion() {
-  const [itemId, setItemId] = useState(null);
+const cx = classNames.bind(styles);
 
+const IdContext = createContext(null);
+
+function Accordion() {
+  //현재 활성화된 레이블의 ID
+  const [activeItemId, setActiveItemId] = useState(null);
+
+  //한 레이블의 셰브론 버튼을 클릭할 때, 해당 레이블의 index를 활성화된 레이블 ID로 설정하기 위한 함수
   const handleButtonClick = (number) => {
-    if (itemId === number) {
-      setItemId(null);
+    //토글을 위한 조건
+    if (activeItemId === number) {
+      setActiveItemId(null);
     } else {
-      setItemId(number);
+      setActiveItemId(number);
     }
   };
 
   return (
-    <>
+    <IdContext.Provider value={activeItemId}>
       <ul>
         {MOCK_DATA.map((el, idx) => {
           return (
             <li key={idx.toString()}>
               <AccordionLabel
                 label={el}
-                activeItemId={itemId}
                 number={idx}
                 onClick={handleButtonClick}
               />
@@ -33,13 +39,13 @@ function Accordion() {
           );
         })}
       </ul>
-    </>
+    </IdContext.Provider>
   );
 }
 
-function AccordionLabel({ label, number, activeItemId, onClick }) {
-  const cx = classNames.bind(styles);
-  let isExpanded = number === activeItemId;
+function AccordionLabel({ label, number, onClick }) {
+  const activeItemId = useContext(IdContext);
+  const isExpanded = number === activeItemId;
 
   return (
     <div className={styles.label_container}>
