@@ -1,0 +1,77 @@
+.container {
+  position: relative;
+}
+
+.button {
+  padding: 8px 12px;
+
+  width: 180px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selected_option {
+  font-size: 14px;
+}
+
+.option_container {
+  padding: 4px;
+  position: absolute;
+  top: 50px;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 180px;
+  background-color: white;
+  border: 1px solid #e0e0e2;
+  border-radius: 8px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.option {
+  width: 100%;
+  padding: 6px 8px 6px 32px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.option_item {
+  width: 100%;
+  padding: 6px 8px 6px 32px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background-color: #fff;
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.option_item:hover {
+  background-color: #f4f4f5;
+}
+
+.check_mark {
+  position: absolute;
+  left: 8px;
+}
+
+.option_name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #09090b;
+}
