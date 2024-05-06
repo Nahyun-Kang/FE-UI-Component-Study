@@ -61,6 +61,10 @@
   cursor: pointer;
 }
 
+.option_item .focused {
+  color: red;
+}
+
 .option_item:hover {
   background-color: #f4f4f5;
 }

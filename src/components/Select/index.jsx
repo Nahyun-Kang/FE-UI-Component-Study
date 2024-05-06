@@ -55,7 +55,7 @@ function Option({ onClick }) {
   const selectedItem = useContext(OptionContext);
 
   return (
-    <ul className={styles.option_container}>
+    <ul className={styles.option_container} tabIndex={0}>
       <li className={styles.option}>
         <span className={styles.option_name}>{MOCK.theme}</span>
       </li>
@@ -63,7 +63,7 @@ function Option({ onClick }) {
         return (
           <li
             key={idx.toString()}
-            className={styles.option_item}
+            className={`${styles.option_item} `}
             onClick={() => onClick(el)}
           >
             {selectedItem === el && (
