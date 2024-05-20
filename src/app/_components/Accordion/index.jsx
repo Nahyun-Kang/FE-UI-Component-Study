@@ -1,10 +1,11 @@
+'use client';
 import Image from 'next/image';
 import { useState, createContext, useContext } from 'react';
 import classNames from 'classnames/bind';
 
 import styles from './Accordion.module.scss';
 import { MOCK_DATA } from './mock';
-import Chevron from '../../../public/chevron_down.svg';
+import Chevron from '../../../../public/chevron_down.svg';
 
 const cx = classNames.bind(styles);
 
